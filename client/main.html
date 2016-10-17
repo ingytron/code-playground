@@ -2,12 +2,38 @@
   <title>TextCircle</title>
 </head>
 
+
 <body>
-  <h1>Welcome to TextCircle!</h1>
-  {{> editor }}
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+	  <div class="container">
+	    <div class="navbar-header">
+	      <a class="navbar-brand" href="#">
+	        <img alt="TextCircle" src="...">
+	      </a>
+	    </div>
+	  </div>
+	</nav><!-- end nav container-->
+
+	<div class="container top-margin">
+		<div class="row">
+			<div class="col-md-6">
+	  			{{> editor }}
+	  		</div>
+
+		  	<div class="col-md-6">
+		  		{{> viewer }}
+		  	</div>
+		</div><!-- ends row -->
+	</div>
 
 </body>
 
 <template name="editor">
-	{{>sharejsCM docid=docid id="editor"}}
+	{{>sharejsCM docid=docid onRender=config id="editor"}}
+</template>
+
+<template name="viewer">
+	<iframe id="viewer_iframe">
+
+	</iframe>
 </template>
